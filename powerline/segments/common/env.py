@@ -68,7 +68,7 @@ class CwdSegment(Segment):
 			if home:
 				home = out_u(home)
 				if path.startswith(home):
-					path = '~' + path[len(home):]
+					path = ('~' if shorten_home == True else shorten_home) + path[len(home):]
 		return path
 
 	def __call__(self, pl, segment_info,
